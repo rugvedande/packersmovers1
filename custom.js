@@ -1,246 +1,217 @@
-/**	
-	* Template Name: WpF Degree - Ultra Responsive Bootstrap Educational Html5 Template
-	* Version: 1.0	
-	* Template Scripts
-	* Author: WpFreeware Team
-	* Author URI: http://wpfreeware.com/
-
-	Custom JS
-	
-	1. DROPDOWN MENU
-	2. SUPERSLIDES SLIDER
-	3. NEWS SLIDER
-	4. SKILL CIRCLE
-	5. WOW SMOOTH ANIMATIN
-	6. COURSE SLIDER
-	7. TUTORS SLIDER
-	8. BOOTSTRAP TOOLTIP
-	9. PRELOADER
-	10. EVENTS SLIDER
-	11. GALLERY SLIDER
-	12. SCROLL TOP BUTTON
-	13. SCROLL UP BUTTON	 	
-	
-**/
-
-jQuery(function($){
 
 
-	/* ----------------------------------------------------------- */
-  /*  1. DROPDOWN MENU
-  /* ----------------------------------------------------------- */
 
-   // for hover dropdown menu
-  $('ul.nav li.dropdown').hover(function() {
-      $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
-    }, function() {
-      $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
+/*=============================================================
+    Authour URI: www.binarycart.com
+    License: Commons Attribution 3.0
+
+    http://creativecommons.org/licenses/by/3.0/
+
+    100% To use For Personal And Commercial Use.
+    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
+   
+    ========================================================  */
+
+
+(function ($) {
+    "use strict";
+    var mainApp = {
+
+        main_fun: function () {
+            /*====================================
+            METIS MENU 
+            ======================================*/
+            $('#main-menu').metisMenu();
+
+            /*====================================
+              LOAD APPROPRIATE MENU BAR
+           ======================================*/
+            $(window).bind("load resize", function () {
+                if ($(this).width() < 768) {
+                    $('div.sidebar-collapse').addClass('collapse')
+                } else {
+                    $('div.sidebar-collapse').removeClass('collapse')
+                }
+            });
+
+            /*====================================
+            MORRIS BAR CHART
+         ======================================*/
+            Morris.Bar({
+                element: 'morris-bar-chart',
+                data: [{
+                    y: '2006',
+                    a: 100,
+                    b: 90
+                }, {
+                    y: '2007',
+                    a: 75,
+                    b: 65
+                }, {
+                    y: '2008',
+                    a: 50,
+                    b: 40
+                }, {
+                    y: '2009',
+                    a: 75,
+                    b: 65
+                }, {
+                    y: '2010',
+                    a: 50,
+                    b: 40
+                }, {
+                    y: '2011',
+                    a: 75,
+                    b: 65
+                }, {
+                    y: '2012',
+                    a: 100,
+                    b: 90
+                }],
+                xkey: 'y',
+                ykeys: ['a', 'b'],
+                labels: ['Series A', 'Series B'],
+                hideHover: 'auto',
+                resize: true
+            });
+
+            /*====================================
+          MORRIS DONUT CHART
+       ======================================*/
+            Morris.Donut({
+                element: 'morris-donut-chart',
+                data: [{
+                    label: "Download Sales",
+                    value: 12
+                }, {
+                    label: "In-Store Sales",
+                    value: 30
+                }, {
+                    label: "Mail-Order Sales",
+                    value: 20
+                }],
+                resize: true
+            });
+
+            /*====================================
+         MORRIS AREA CHART
+      ======================================*/
+
+            Morris.Area({
+                element: 'morris-area-chart',
+                data: [{
+                    period: '2010 Q1',
+                    iphone: 2666,
+                    ipad: null,
+                    itouch: 2647
+                }, {
+                    period: '2010 Q2',
+                    iphone: 2778,
+                    ipad: 2294,
+                    itouch: 2441
+                }, {
+                    period: '2010 Q3',
+                    iphone: 4912,
+                    ipad: 1969,
+                    itouch: 2501
+                }, {
+                    period: '2010 Q4',
+                    iphone: 3767,
+                    ipad: 3597,
+                    itouch: 5689
+                }, {
+                    period: '2011 Q1',
+                    iphone: 6810,
+                    ipad: 1914,
+                    itouch: 2293
+                }, {
+                    period: '2011 Q2',
+                    iphone: 5670,
+                    ipad: 4293,
+                    itouch: 1881
+                }, {
+                    period: '2011 Q3',
+                    iphone: 4820,
+                    ipad: 3795,
+                    itouch: 1588
+                }, {
+                    period: '2011 Q4',
+                    iphone: 15073,
+                    ipad: 5967,
+                    itouch: 5175
+                }, {
+                    period: '2012 Q1',
+                    iphone: 10687,
+                    ipad: 4460,
+                    itouch: 2028
+                }, {
+                    period: '2012 Q2',
+                    iphone: 8432,
+                    ipad: 5713,
+                    itouch: 1791
+                }],
+                xkey: 'period',
+                ykeys: ['iphone', 'ipad', 'itouch'],
+                labels: ['iPhone', 'iPad', 'iPod Touch'],
+                pointSize: 2,
+                hideHover: 'auto',
+                resize: true
+            });
+
+            /*====================================
+    MORRIS LINE CHART
+ ======================================*/
+            Morris.Line({
+                element: 'morris-line-chart',
+                data: [{
+                    y: '2006',
+                    a: 100,
+                    b: 90
+                }, {
+                    y: '2007',
+                    a: 75,
+                    b: 65
+                }, {
+                    y: '2008',
+                    a: 50,
+                    b: 40
+                }, {
+                    y: '2009',
+                    a: 75,
+                    b: 65
+                }, {
+                    y: '2010',
+                    a: 50,
+                    b: 40
+                }, {
+                    y: '2011',
+                    a: 75,
+                    b: 65
+                }, {
+                    y: '2012',
+                    a: 100,
+                    b: 90
+                }],
+                xkey: 'y',
+                ykeys: ['a', 'b'],
+                labels: ['Series A', 'Series B'],
+                hideHover: 'auto',
+                resize: true
+            });
+           
+     
+        },
+
+        initialization: function () {
+            mainApp.main_fun();
+
+        }
+
+    }
+    // Initializing ///
+
+    $(document).ready(function () {
+        mainApp.main_fun();
     });
-	
-	/* ----------------------------------------------------------- */
-	/*  2. SUPERSLIDES SLIDER
-	/* ----------------------------------------------------------- */
-	$('#slides').superslides({
-      animation: 'fade',
-      animation_easing: 'linear',
-      pagination: 'true'
-    });
-	
-	/* ----------------------------------------------------------- */
-	/*  3. NEWS SLIDER
-	/* ----------------------------------------------------------- */
-	$('.single_notice_pane').slick({     
-      slide: 'ul'
-      
-    });
-    $('[href="#notice"]').on('shown.bs.tab', function (e) {
-    $('.single_notice_pane').resize();
-	});
-	 $('[href="#news"]').on('shown.bs.tab', function (e) {
-    $('.single_notice_pane').resize();
-	});   
-    
 
-
-	/* ----------------------------------------------------------- */
-	/*  4. SKILL CIRCLE
-	/* ----------------------------------------------------------- */
-
-	$('#myStathalf').circliful();
-	$('#myStat').circliful();
-	$('#myStathalf2').circliful();
-	$('#myStat2').circliful();
-	$('#myStat3').circliful();
-	$('#myStat4').circliful();
-	$('#myStathalf3').circliful();
-
-	/* ----------------------------------------------------------- */
-	/*  5. WOW SMOOTH ANIMATIN
-	/* ----------------------------------------------------------- */
-
-	wow = new WOW(
-      {
-        animateClass: 'animated',
-        offset:       100
-      }
-    );
-    wow.init();
-
-
-	/* ----------------------------------------------------------- */
-	/*  6. COURSE SLIDER
-	/* ----------------------------------------------------------- */
-	
-    $('.course_nav').slick({
-	  dots: false,
-	  infinite: false,
-	  speed: 300,
-	  slidesToShow: 3,
-	  arrows:true,  
-	  slidesToScroll: 3,
-	  slide: 'li',
-	  responsive: [
-	    {
-	      breakpoint: 1024,
-	      settings: {
-	        slidesToShow: 3,
-	        slidesToScroll: 3,
-	        infinite: true,
-	        dots: true
-	      }
-	    },
-	    {
-	      breakpoint: 600,
-	      settings: {
-	        slidesToShow: 2,
-	        slidesToScroll: 2
-	      }
-	    },
-	    {
-	      breakpoint: 480,
-	      settings: {
-	        slidesToShow: 1,
-	        slidesToScroll: 1
-	      }
-	    }
-	    // You can unslick at a given breakpoint now by adding:
-	    // settings: "unslick"
-	    // instead of a settings object
-	  ]
-	});
-
-	/* ----------------------------------------------------------- */
-	/*  7. TUTORS SLIDER
-	/* ----------------------------------------------------------- */
-
-	 $('.tutors_nav').slick({
-	  dots: true,	  
-	  infinite: true,
-	  speed: 300,
-	  slidesToShow: 5,
-	  arrows:false,  
-	  slidesToScroll: 1,
-	  slide: 'li',
-	  responsive: [
-	    {
-	      breakpoint: 1024,
-	      settings: {
-	        slidesToShow: 3,
-	        slidesToScroll: 3,
-	        infinite: true,
-	        arrows:false
-	      }
-	    },
-	    {
-	      breakpoint: 600,
-	      settings: {
-	        slidesToShow: 2,
-	        slidesToScroll: 2
-	      }
-	    },
-	    {
-	      breakpoint: 480,
-	      settings: {
-	        slidesToShow: 1,
-	        slidesToScroll: 1
-	      }
-	    }
-	    // You can unslick at a given breakpoint now by adding:
-	    // settings: "unslick"
-	    // instead of a settings object
-	  ]
-	});
-		
-
-	/* ----------------------------------------------------------- */
-	/*  8. BOOTSTRAP TOOLTIP
-	/* ----------------------------------------------------------- */
-		$('.soc_tooltip').tooltip('hide')
-
-
-
-	/* ----------------------------------------------------------- */
-	/*  9. PRELOADER 
-	/* ----------------------------------------------------------- */
-	  window.addEventListener('DOMContentLoaded', function() {
-        new QueryLoader2(document.querySelector("body"), {
-            barColor: "#efefef",
-            backgroundColor: "#111",
-            percentage: true,
-            barHeight: 1,
-            minimumTime: 200,
-            fadeOutTime: 1000
-        });
-    });
-
-
-    /* ----------------------------------------------------------- */
-	/*  10. EVENTS SLIDER
-	/* ----------------------------------------------------------- */
-	   
-	$('.events_slider').slick({
-	  dots: true,
-	  infinite: true,
-	  speed: 500,
-	  fade: true,
-	  cssEase: 'linear'
-	});
-
-    /* ----------------------------------------------------------- */
-	/*  11. GALLERY SLIDER
-	/* ----------------------------------------------------------- */
-	 $('#gallerySLide a').tosrus({
-          buttons: 'inline',
-          pagination  : {
-            add     : true,
-            type    : 'thumbnails'            
-          },
-          caption   : {
-            add     : true
-          }
-        }); 	
-
-	/* ----------------------------------------------------------- */
-	/*  12. SCROLL UP BUTTON
-	/* ----------------------------------------------------------- */
-
-	//Check to see if the window is top if not then display button
-
-	  $(window).scroll(function(){
-	    if ($(this).scrollTop() > 300) {
-	      $('.scrollToTop').fadeIn();
-	    } else {
-	      $('.scrollToTop').fadeOut();
-	    }
-	  });
-	   
-	  //Click event to scroll to top
-
-	  $('.scrollToTop').click(function(){
-	    $('html, body').animate({scrollTop : 0},800);
-	    return false;
-	  });
-	
-
-	
-});
+}(jQuery));
